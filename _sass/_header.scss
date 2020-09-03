@@ -2,16 +2,43 @@ header.site-header{
 
     background-color: $dark-grey;
     background-image: url($header_background_url);
+    background-size: cover;
     padding: 20px 0 18px 0;
+
+    .wrapper {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+
+      @media (max-width: 767px) {
+        flex-direction: column;
+      }
+    }
 
     .logo {
 
         a {
-            float: left;
             display: inline-block;
-            color: $white;
         }
 
+        @media (max-width: 767px) {
+          margin-bottom: 8px;
+        }
+    }
+
+    .subscribe {
+      padding: 10px 12px;
+      background-color: $white;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 400;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+
+      &:hover {
+        background-color: darken($white, 5%);
+      }
     }
 
     h2 {

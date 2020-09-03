@@ -5,6 +5,8 @@
         <img width="400" alt="{{ site.title }} Logo" src="{{ site.guardian.style.logo_url }}">
       </a>
     </div>
-    <br class="clear"/>
+    {% if site.guardian.social_links.email_subscription_url %}
+      <a class="subscribe" target="_blank" title="Email Subscription" href="{{ site.guardian.social_links.email_subscription_url }}">Subscribe to Updates</a>
+    {% endif %}
   </div>
 </header>
