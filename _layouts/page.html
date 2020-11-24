@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div class="page">
+    <header>
+        <h1><a title="{{page.title}}" href="{{page.url}}">{{ page.title }}</a></h1>
+    {% if page.date %}
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+    {% endif %}
+    {% if page.meta %} • {{ page.meta }}{% endif %}
+    </header>
+
+    {% if page.toc == true %}
+        <aside class="toc">
+            {{ content | toc_only }}
+        </aside>
+        <article role="article">
+          {{ content | inject_anchors }}
+        </article>
+    {% else %}
+        <article role="article">
+          {{ content }}
+        </article>
+    {% endif %}
+
+
+</div>
